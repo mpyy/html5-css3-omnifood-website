@@ -45,14 +45,14 @@ $(document).ready(function () {
       // Remove links that don't actually link to anything
       .not('[href="#"]')
       .not('[href="#0"]')
-      .click(function(event) {
+      .click(function (event) {
         // On-page links
-        if (
-          location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-          && 
-          location.hostname == this.hostname
-        ) {
-          // Figure out element to scroll to
+            if (
+                location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+                &&
+                location.hostname == this.hostname
+            ) {
+            // Figure out element to scroll to
           var target = $(this.hash);
           target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
           // Does a scroll target exist?
@@ -76,5 +76,32 @@ $(document).ready(function () {
           }
         }
       });
+    
+    /* Animations on scroll */
+    /* jQuery syntax */
+    $('.js--wp-1').waypoint(function(direction) {
+        $('.js--wp-1').addClass('animated fadeIn');
+    }, {
+        offset: '50%'
+    })
+
+    $('.js--wp-2').waypoint(function(direction) {
+        $('.js--wp-2').addClass('animated fadeInUp');
+    }, {
+        offset: '50%'
+    })
+
+    $('.js--wp-3').waypoint(function(direction) {
+        $('.js--wp-3').addClass('animated fadeIn');
+    }, {
+        offset: '50%'
+    })
+
+    $('.js--wp-4').waypoint(function(direction) {
+        $('.js--wp-4').addClass('animated pulse');
+    }, {
+        offset: '50%'
+    })
+    
     
 });
